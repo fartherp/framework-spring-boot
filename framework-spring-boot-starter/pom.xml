@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2018. juzhen.io. All rights reserved.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>framework-spring-boot</artifactId>
+        <groupId>com.github.fartherp.spring.boot</groupId>
+        <version>2.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>framework-spring-boot-starter</artifactId>
+    <name>framework-spring-boot-starter</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp.spring.boot</groupId>
+            <artifactId>framework-spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-compress</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-database</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-exception</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-file</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-net</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-poi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fartherp</groupId>
+            <artifactId>framework-security</artifactId>
+        </dependency>
+    </dependencies>
+</project>

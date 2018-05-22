@@ -1,0 +1,1 @@
+provides: framework-spring-boot-autoconfigure,framework-compress,framework-core,framework-database,framework-file,framework-poi,framework-security

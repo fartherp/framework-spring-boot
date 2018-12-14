@@ -1,3 +1,5 @@
 # Auto Configure
 org.springframework.context.ApplicationContextInitializer=\
   com.github.fartherp.framework.spring.boot.autoconfigure.initializer.ServiceLocatorInitializer
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.fartherp.framework.spring.boot.autoconfigure.configuration.MockAutoConfiguration

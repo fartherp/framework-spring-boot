@@ -1,0 +1,24 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.github.fartherp.framework.spring.boot.autoconfigure.configuration.MockProperties",
+      "name": "fartherpmock",
+      "type": "com.github.fartherp.framework.spring.boot.autoconfigure.configuration.MockProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.github.fartherp.framework.spring.boot.autoconfigure.configuration.MockProperties",
+      "name": "fartherpmock.bean-names",
+      "description": "the bean names.",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "com.github.fartherp.framework.spring.boot.autoconfigure.configuration.MockProperties",
+      "name": "fartherpmock.package-names",
+      "description": "the package names.",
+      "type": "java.lang.String[]"
+    }
+  ]
+}

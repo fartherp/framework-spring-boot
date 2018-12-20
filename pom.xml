@@ -24,14 +24,14 @@
         <jdk.version>1.7</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <profiles.dir>src/main/profiles</profiles.dir>
-        <framework-version>2.0.3</framework-version>
+        <framework-version>2.0.4</framework-version>
         <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
     </properties>
 
     <scm>
-        <connection>scm:git:git@github.com:fartherp/framework.git</connection>
-        <developerConnection>scm:git:git@github.com:fartherp/framework.git</developerConnection>
-        <url>https://github.com/fartherp/framework</url>
+        <connection>scm:git:git@github.com:fartherp/spring-boot-starter.git</connection>
+        <developerConnection>scm:git:git@github.com:fartherp/spring-boot-starter.git</developerConnection>
+        <url>https://github.com/fartherp/spring-boot-starter</url>
         <tag>HEAD</tag>
     </scm>
     <licenses>

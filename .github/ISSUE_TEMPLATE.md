@@ -1,14 +1,14 @@
 <!--
-Thanks for raising a Framework integration with Spring Boot issue. What sort of issue are you raising?
+Thanks for raising a framework-spring-boot integration with Spring Boot issue. What sort of issue are you raising?
 
 Question
 
 Please ask questions about how to use something, or to understand why something isn't
-working as you expect it to, on Stack Overflow using the framework tag.
+working as you expect it to, on Stack Overflow using the framework-spring-boot tag.
 
 Bug report
 
-Please provide details of the problem, including the version of this Framework integration 
+Please provide details of the problem, including the version of this framework-spring-boot integration 
 with Spring Boot that you are using. If possible, please provide a test case or sample application 
 that reproduces the problem. This makes it much easier for us to diagnose the problem and to verify 
 that we have fixed it.

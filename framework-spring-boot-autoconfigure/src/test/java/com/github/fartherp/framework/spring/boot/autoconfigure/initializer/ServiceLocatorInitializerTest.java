@@ -5,14 +5,14 @@
 package com.github.fartherp.framework.spring.boot.autoconfigure.initializer;
 
 import com.github.fartherp.framework.core.bean.ServiceLocator;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,20 +24,20 @@ import static org.junit.Assert.*;
 public class ServiceLocatorInitializerTest {
     private ConfigurableApplicationContext context;
 
-    @Before
+    @BeforeEach
     public void init() {
         context = SpringApplication.run(ServiceLocatorInitializerTest.class);
     }
 
-    @After
+    @AfterEach
     public void closeContext() {
         SpringApplication.exit(context);
     }
 
     @Test
-    public void initialize() throws Exception {
+    public void initialize() {
         UserService service = ServiceLocator.getBean("userService");
-        assertEquals(service.getName(), "UserTest");
+        assertThat(service.getName()).isEqualTo("UserTest");
     }
 
 }

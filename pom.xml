@@ -13,6 +13,8 @@
     <modules>
         <module>framework-spring-boot-autoconfigure</module>
         <module>framework-spring-boot-starter</module>
+        <module>framework-spring-boot-test-autoconfigure</module>
+        <module>framework-spring-boot-starter-test</module>
     </modules>
 
     <name>framework-spring-boot</name>
@@ -303,12 +305,35 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.github.fartherp.spring.boot</groupId>
+                <artifactId>framework-spring-boot-test-autoconfigure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency><!-- override version managed by spring-boot-dependencies for build on JDK 11 (Can remove when update to spring boot 2.1.x) -->
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>5.3.2</version>
+            </dependency>
+            <dependency><!-- override version managed by spring-boot-dependencies for build on JDK 11 (Can remove when update to spring boot 2.1.x) -->
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>5.3.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

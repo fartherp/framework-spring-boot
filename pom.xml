@@ -9,7 +9,7 @@
     <groupId>com.github.fartherp.spring.boot</groupId>
     <artifactId>framework-spring-boot</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.3</version>
+    <version>3.0.4-SNAPSHOT</version>
     <modules>
         <module>framework-spring-boot-autoconfigure</module>
         <module>framework-spring-boot-starter</module>

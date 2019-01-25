@@ -7,7 +7,9 @@ before_install:
   - chmod +x mvnw
 
 install: ./mvnw install -DskipTests=true -B -V
-script: ./mvnw test -B
+script: ./mvnw clean test -B
+after_success:
+  - ./mvnw clean test jacoco:report coveralls:report -q -DrepoToken="${COVERALLS_TOKEN}"
 
 notifications:
   email: false
@@ -17,3 +19,7 @@ sudo: false
 cache:
   directories:
     - $HOME/.m2
+
+env:
+  global:
+    - secure: "Kj1H42vM5f0cbNHF4DBlo+oXM5f+3mGRcwkAKkpQiaO0ZtvQlOyJLBz1WA04CevVSk0qTOyPfH1sjza9wz7mZS0rwsv9fF9Vqf5CYZQSqt3VsfQVN6eS9ZQcO3MF33q1bDkZ4uIFjCY9er0gm0OKT61tmAmdbr7CsAMc80NidI9XCTLNoN+1qYXTcOIzDcyFD+ZNT3DvCw3CQRLWm6tnKD/OKflWM+q4Ck4rPt9wLcrpicA3cxUDRj25m45BV6rBlMDWCXvSeQYBbXoqeZ2WxICtDYeMVVCfpsTTsJOMK1gWRAY1ca6Ri2u81Rc3Nm5GYxsRzBrhWZZec4uu7bL2c/Km8gvbjaU7lnhZzWtFRSdGThEuyYf2PWIhnuDbWTSljMY0PFFRu/WekbfuoIVXcjCZVGXVN+CTemWWEr5S/mcnRZe6/k1NTHeQKfENKx3Xlein6C3hm+u3/xkknDXDmjiy9GxBwNzbInqls1RmqZYt23WMYkpA71MB6wgoDbMLHtt2CPuhOyXk3TxP2BoR2uQPX/hanVAbLmjQssWtcrWUi4aZc1gmLkRZ6NaQvTNK2MepOuJa/5fCRUIYOhmulCL8fii6wA/qJNlJRhkfpeS4Aul5sw38fVyBuTxeEoEZHOARUat5nDEq338LMH995sCKTo4xgmX1dv42euCjhdM="

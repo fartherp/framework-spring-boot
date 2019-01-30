@@ -8,7 +8,7 @@
     <groupId>com.github.fartherp.spring.boot</groupId>
     <artifactId>framework-spring-boot</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.4</version>
+    <version>3.0.5-SNAPSHOT</version>
     <modules>
         <module>framework-spring-boot-autoconfigure</module>
         <module>framework-spring-boot-starter</module>
@@ -36,7 +36,7 @@
         <connection>scm:git:git@github.com:fartherp/spring-boot-starter.git</connection>
         <developerConnection>scm:git:git@github.com:fartherp/spring-boot-starter.git</developerConnection>
         <url>https://github.com/fartherp/spring-boot-starter</url>
-        <tag>v3.0.4</tag>
+        <tag>HEAD</tag>
     </scm>
     <licenses>
         <license>

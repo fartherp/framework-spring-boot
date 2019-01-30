@@ -3,13 +3,12 @@
   ~ Copyright (c) 2018. CK. All rights reserved.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.fartherp.spring.boot</groupId>
     <artifactId>framework-spring-boot</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.4-SNAPSHOT</version>
+    <version>3.0.4</version>
     <modules>
         <module>framework-spring-boot-autoconfigure</module>
         <module>framework-spring-boot-starter</module>
@@ -37,7 +36,7 @@
         <connection>scm:git:git@github.com:fartherp/spring-boot-starter.git</connection>
         <developerConnection>scm:git:git@github.com:fartherp/spring-boot-starter.git</developerConnection>
         <url>https://github.com/fartherp/spring-boot-starter</url>
-        <tag>HEAD</tag>
+        <tag>v3.0.4</tag>
     </scm>
     <licenses>
         <license>

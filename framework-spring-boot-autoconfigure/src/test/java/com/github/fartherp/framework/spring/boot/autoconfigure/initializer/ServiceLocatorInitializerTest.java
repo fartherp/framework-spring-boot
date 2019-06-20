@@ -5,12 +5,8 @@
 package com.github.fartherp.framework.spring.boot.autoconfigure.initializer;
 
 import com.github.fartherp.framework.core.bean.ServiceLocator;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -20,22 +16,17 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author: CK
  * @date: 2018/5/22
  */
-@SpringBootApplication(scanBasePackages = {"com.github.fartherp.framework.spring.boot.autoconfigure.initializer"})
 public class ServiceLocatorInitializerTest {
-    private ConfigurableApplicationContext context;
 
-    @BeforeEach
-    public void init() {
-        context = SpringApplication.run(ServiceLocatorInitializerTest.class);
-    }
-
-    @AfterEach
-    public void closeContext() {
-        SpringApplication.exit(context);
-    }
+	private ServiceLocatorInitializer serviceLocatorInitializer = new ServiceLocatorInitializer();
 
     @Test
-    public void initialize() {
+    public void testInitialize() {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+		context.scan("com.github.fartherp.framework.spring.boot.autoconfigure.initializer");
+		context.refresh();
+
+		serviceLocatorInitializer.initialize(context);
         UserService service = ServiceLocator.getBean("userService");
         assertThat(service.getName()).isEqualTo("UserTest");
     }

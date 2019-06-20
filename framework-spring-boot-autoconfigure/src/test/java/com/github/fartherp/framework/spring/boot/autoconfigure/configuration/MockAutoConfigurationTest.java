@@ -5,15 +5,13 @@
 package com.github.fartherp.framework.spring.boot.autoconfigure.configuration;
 
 import com.github.fartherp.framework.core.bean.ServiceLocator;
-import com.github.fartherp.framework.core.proxy.PackageNameAutoProxyCreator;
 import com.github.fartherp.framework.core.web.interceptor.MockInterceptor;
+import com.github.fartherp.framework.spring.boot.autoconfigure.initializer.ServiceLocatorInitializer;
 import com.github.fartherp.framework.spring.boot.autoconfigure.service.UserService;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;
-import org.springframework.boot.test.util.TestPropertyValues;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.autoconfigure.AutoConfigurations;
+import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,56 +22,50 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Author: CK
  * Date: 2019/1/15
  */
-class MockAutoConfigurationTest {
+public class MockAutoConfigurationTest {
 
-    private AnnotationConfigApplicationContext context;
+	private ApplicationContextRunner contextRunner = new ApplicationContextRunner()
+		.withInitializer(new ServiceLocatorInitializer())
+		.withConfiguration(AutoConfigurations.of(MockAutoConfiguration.class))
+		.withUserConfiguration(EnableMockConfiguration.class)
+		.withPropertyValues("fartherpmock.beanNames:*Service",
+			"fartherpmock.packageNames:com.github.fartherp.framework.spring.boot.autoconfigure.service");
 
-    @BeforeEach
-    void setUp() {
-        this.context = new AnnotationConfigApplicationContext();
-    }
+	@Test
+	public void testDefaultFartherpMockInterceptor() {
+		this.contextRunner.run((context) -> {
+			assertThat(context.getBean(MockInterceptor.class)).isNotNull();
+		});
+	}
 
-    @AfterEach
-    void tearDown() {
-        if (this.context != null) {
-            this.context.close();
-        }
-    }
+	@Test
+	public void testDefaultMockBeanNameAutoProxyCreator() {
+		this.contextRunner.run((context) -> {
+			assertThat(context.getBean(BeanNameAutoProxyCreator.class)).isNotNull();
+		});
+	}
 
-    @Test
-    void testDefaultConfiguration() {
-        ServiceLocator.setFactory(this.context);
-        TestPropertyValues.of("fartherpmock.beanNames:*Service",
-                "fartherpmock.packageNames:com.github.fartherp.framework.spring.boot.autoconfigure.service").applyTo(this.context);
-        this.context.register(EnableMockConfiguration.class, MockAutoConfiguration.class);
-        this.context.refresh();
-        assertThat(this.context.getBean(MockInterceptor.class)).isInstanceOf(MockInterceptor.class);
-        assertThat(this.context.getBean(BeanNameAutoProxyCreator.class)).isInstanceOf(PackageNameAutoProxyCreator.class);
-    }
+	@Test
+	public void testUserServiceConfiguration() {
+		this.contextRunner.withUserConfiguration(ServiceConfiguration.class)
+			.run((context) -> {
+				ServiceLocator.setFactory(context);
+				assertThat(context.getBean(BeanNameAutoProxyCreator.class)).isNotNull();
+				UserService userService = context.getBean("userService", UserService.class);
+				assertThat(userService.getName()).isEqualTo("UserTestMock");
+			});
+	}
 
-    @Test
-    void testUserServiceConfiguration() {
-        ServiceLocator.setFactory(this.context);
-        TestPropertyValues.of("fartherpmock.beanNames:*Service",
-                "fartherpmock.packageNames:com.github.fartherp.framework.spring.boot.autoconfigure.service").applyTo(this.context);
-        this.context.register(ServiceConfiguration.class, MockAutoConfiguration.class);
-        this.context.refresh();
-        assertThat(this.context.getBean(MockInterceptor.class)).isInstanceOf(MockInterceptor.class);
-        assertThat(this.context.getBean(BeanNameAutoProxyCreator.class)).isInstanceOf(PackageNameAutoProxyCreator.class);
-        UserService userService = this.context.getBean("userService", UserService.class);
-        assertThat(userService.getName()).isEqualTo("UserTestMock");
-    }
+	@Configuration
+	@EnableMock
+	public static class EnableMockConfiguration {
 
-    @Configuration
-    @EnableMock
-    static class EnableMockConfiguration {
+	}
 
-    }
+	@Configuration
+	@EnableMock
+	@ComponentScan("com.github.fartherp.framework.spring.boot.autoconfigure.service")
+	public static class ServiceConfiguration {
 
-    @Configuration
-    @EnableMock
-    @ComponentScan("com.github.fartherp.framework.spring.boot.autoconfigure.service")
-    static class ServiceConfiguration {
-
-    }
+	}
 }

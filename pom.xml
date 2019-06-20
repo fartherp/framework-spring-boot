@@ -348,19 +348,13 @@
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>5.3.2</version>
             </dependency>
-            <dependency><!-- override version managed by spring-boot-dependencies for build on JDK 11 (Can remove when update to spring boot 2.1.x) -->
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>5.3.2</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
+            <artifactId>junit-jupiter-api</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -17,10 +17,10 @@ Framework Spring Boot Starter 用于帮助你在Spring Boot项目中轻松集成
     <dependency>
         <groupId>com.github.fartherp.spring.boot</groupId>
         <artifactId>framework-spring-boot-starter</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.5</version>
     </dependency>
     ```
     ```Gradle```
     ```
-    compile 'com.github.fartherp.spring.boot:framework-spring-boot-starter:3.0.4'
+    compile 'com.github.fartherp.spring.boot:framework-spring-boot-starter:3.0.5'
     ```

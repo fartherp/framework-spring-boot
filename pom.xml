@@ -24,9 +24,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <encoding.charset>UTF-8</encoding.charset>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <profiles.dir>src/main/profiles</profiles.dir>
-        <framework-version>3.0.5</framework-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<profiles.dir>src/main/profiles</profiles.dir>
+		<framework-version>3.0.6-SNAPSHOT</framework-version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <coveralls.version>4.3.0</coveralls.version>
         <jacoco.version>0.8.2</jacoco.version>
@@ -66,6 +66,17 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+		<repository>
+			<id>releases</id>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+		</repository>
+	</repositories>
 
     <developers>
         <developer>

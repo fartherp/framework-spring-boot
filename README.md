@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/fartherp/framework-spring-boot.svg?branch=master)](https://travis-ci.org/fartherp/framework-spring-boot)
 [![Coverage Status](https://coveralls.io/repos/github/fartherp/framework-spring-boot/badge.svg?branch=master)](https://coveralls.io/github/fartherp/framework-spring-boot?branch=master)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.fartherp.spring.boot/framework-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.fartherp.spring.boot/framework-spring-boot-starter/)
+[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.github.fartherp.spring.boot/framework-spring-boot-starter.svg)](https://oss.sonatype.org/content/repositories/snapshots/com/github/fartherp/spring/boot/framework-spring-boot-starter)
 [![GitHub release](https://img.shields.io/github/release/fartherp/framework-spring-boot.svg)](https://github.com/fartherp/framework-spring-boot/releases)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Project Stats](https://www.openhub.net/p/framework-spring-boot/widgets/project_thin_badge.gif)](https://www.openhub.net/p/framework-spring-boot)

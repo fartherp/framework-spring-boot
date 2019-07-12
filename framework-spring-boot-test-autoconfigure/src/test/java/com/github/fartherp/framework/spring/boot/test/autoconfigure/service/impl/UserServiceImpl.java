@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019. juzhen.io. All rights reserved.
+ * Copyright (c) 2019. CK. All rights reserved.
  */
 
 package com.github.fartherp.framework.spring.boot.test.autoconfigure.service.impl;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: CK
- * @date: 2018/5/22
+ * @author CK
+ * @date 2018/5/22
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {

@@ -19,8 +19,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: CK
- * Date: 2019/1/15
+ *
+ * @author CK
+ * @date 2019/1/15
  */
 public class MockAutoConfigurationTest {
 

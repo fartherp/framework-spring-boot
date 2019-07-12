@@ -13,8 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: CK
- * @date: 2018/5/22
+ * @author CK
+ * @date 2018/5/22
  */
 public class ServiceLocatorInitializerTest {
 

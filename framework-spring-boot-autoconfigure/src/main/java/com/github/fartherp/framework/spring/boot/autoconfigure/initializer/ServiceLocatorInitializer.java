@@ -16,8 +16,8 @@ import org.springframework.context.ConfigurableApplicationContext;
  *     T t = ServiceLocator.getBean("beanName");
  * </pre>
  *
- * @author: CK
- * @date: 2018/5/22
+ * @author CK
+ * @date 2018/5/22
  */
 public class ServiceLocatorInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     private final static Logger logger = LoggerFactory.getLogger(ServiceLocatorInitializer.class);

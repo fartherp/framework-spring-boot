@@ -9,8 +9,9 @@ import org.springframework.stereotype.Service;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: CK
- * Date: 2019/1/15
+ *
+ * @author CK
+ * @date 2019/1/15
  */
 @Service("mockUserManager")
 public class MockUserServiceImpl implements UserService {

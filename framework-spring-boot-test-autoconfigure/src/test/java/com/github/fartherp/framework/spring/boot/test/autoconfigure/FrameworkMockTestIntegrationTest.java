@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019. juzhen.io. All rights reserved.
+ * Copyright (c) 2019. CK. All rights reserved.
  */
 
 package com.github.fartherp.framework.spring.boot.test.autoconfigure;
@@ -16,8 +16,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: CK
- * Date: 2019/1/15
+ *
+ * @author CK
+ * @date 2019/1/15
  */
 @RunWith(SpringRunner.class)
 @FrameworkMockTest

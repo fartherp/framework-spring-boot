@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: CK
- * @date: 2018/5/22
+ * @author CK
+ * @date 2018/5/22
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {

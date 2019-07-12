@@ -18,8 +18,8 @@ import com.github.fartherp.framework.core.proxy.PackageNameAutoProxyCreator;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: CK
- * @date: 2018/12/13
+ * @author CK
+ * @date 2018/12/13
  */
 @Configuration
 @ConditionalOnClass({MockInterceptor.class, PackageNameAutoProxyCreator.class})

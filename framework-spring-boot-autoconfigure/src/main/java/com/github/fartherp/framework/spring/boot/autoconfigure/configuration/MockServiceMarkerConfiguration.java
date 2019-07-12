@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: CK
- * @date: 2018/12/13
+ * @author CK
+ * @date 2018/12/13
  */
 @Configuration
 public class MockServiceMarkerConfiguration {

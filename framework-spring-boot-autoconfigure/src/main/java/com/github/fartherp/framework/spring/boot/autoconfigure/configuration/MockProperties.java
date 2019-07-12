@@ -9,8 +9,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: CK
- * @date: 2018/12/14
+ * @author CK
+ * @date 2018/12/14
  */
 @ConfigurationProperties(prefix = MockProperties.FARTHERP_MOCK_PREFIX)
 public class MockProperties {

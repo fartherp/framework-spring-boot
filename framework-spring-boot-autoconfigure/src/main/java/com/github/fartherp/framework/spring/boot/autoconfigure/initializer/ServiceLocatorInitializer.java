@@ -31,10 +31,11 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @date 2018/5/22
  */
 public class ServiceLocatorInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-    private final static Logger logger = LoggerFactory.getLogger(ServiceLocatorInitializer.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ServiceLocatorInitializer.class);
 
-    public void initialize(ConfigurableApplicationContext applicationContext) {
-        logger.info("ServiceLocatorInitializer ServiceLocator Context Aware");
+    @Override
+	public void initialize(ConfigurableApplicationContext applicationContext) {
+        LOGGER.info("ServiceLocatorInitializer ServiceLocator Context Aware");
         ServiceLocator.setFactory(applicationContext);
     }
 }
